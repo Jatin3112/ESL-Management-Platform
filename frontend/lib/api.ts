@@ -1,11 +1,11 @@
 // Simple API configuration
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = "https://esl-management-platform.onrender.com/";
 
 // Helper function to make API calls
 async function apiCall(endpoint: string, options: RequestInit = {}) {
   const url = `${BASE_URL}${endpoint}`;
   const defaultHeaders = {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
     ...options.headers,
   };
 
@@ -21,7 +21,7 @@ async function apiCall(endpoint: string, options: RequestInit = {}) {
 
     return response.json();
   } catch (error) {
-    console.error('API Call failed:', error);
+    console.error("API Call failed:", error);
     throw error;
   }
 }
@@ -31,19 +31,19 @@ export const storesApi = {
   getStores: async (token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
-    return apiCall('/stores/', { headers });
+
+    return apiCall("/stores/", { headers });
   },
 
   // Get store by ID
   getStore: async (id: string, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/stores/${id}`, { headers });
   },
 
@@ -51,11 +51,11 @@ export const storesApi = {
   createStore: async (storeData: any, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
-    return apiCall('/stores/', {
-      method: 'POST',
+
+    return apiCall("/stores/", {
+      method: "POST",
       headers,
       body: JSON.stringify(storeData),
     });
@@ -65,11 +65,11 @@ export const storesApi = {
   updateStore: async (id: string, storeData: any, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/stores/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers,
       body: JSON.stringify(storeData),
     });
@@ -79,11 +79,11 @@ export const storesApi = {
   deleteStore: async (id: string, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/stores/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers,
     });
   },
@@ -94,19 +94,19 @@ export const productsApi = {
   getProducts: async (token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
-    return apiCall('/products/', { headers });
+
+    return apiCall("/products/", { headers });
   },
 
   // Get product by ID
   getProduct: async (id: string, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/products/${id}`, { headers });
   },
 
@@ -114,11 +114,11 @@ export const productsApi = {
   createProduct: async (productData: any, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
-    return apiCall('/products/', {
-      method: 'POST',
+
+    return apiCall("/products/", {
+      method: "POST",
       headers,
       body: JSON.stringify(productData),
     });
@@ -128,11 +128,11 @@ export const productsApi = {
   updateProduct: async (id: string, productData: any, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/products/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers,
       body: JSON.stringify(productData),
     });
@@ -142,12 +142,12 @@ export const productsApi = {
   deleteProduct: async (id: string, token?: string) => {
     const headers: Record<string, string> = {};
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers["Authorization"] = `Bearer ${token}`;
     }
-    
+
     return apiCall(`/products/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers,
     });
   },
-}; 
+};

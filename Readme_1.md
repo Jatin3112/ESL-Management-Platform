@@ -100,7 +100,7 @@ uvicorn app.main:app --reload
 Once the server is running, go to:
 
 ```
-http://localhost:8000/docs
+https://esl-management-platform.onrender.com/docs
 ```
 
 This opens the **interactive Swagger UI** where you can test all API endpoints.

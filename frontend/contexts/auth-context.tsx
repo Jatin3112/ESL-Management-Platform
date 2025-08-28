@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const fetchUserProfile = async (authToken: string) => {
     try {
-      const response = await fetch("http://localhost:8000/auth/me", {
+      const response = await fetch("https://esl-management-platform.onrender.com/auth/me", {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

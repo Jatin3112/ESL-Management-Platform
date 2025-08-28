@@ -86,7 +86,7 @@ frontend/
 ```
 
 ## Backend Integration
-The frontend connects to the backend API at `http://localhost:8000`. Make sure the backend is running before testing the frontend.
+The frontend connects to the backend API at `https://esl-management-platform.onrender.com`. Make sure the backend is running before testing the frontend.
 
 ## Troubleshooting
 
@@ -117,4 +117,4 @@ The frontend connects to the backend API at `http://localhost:8000`. Make sure t
 - `npm run lint` - Run ESLint
 
 ### Environment Variables
-The frontend automatically connects to `http://localhost:8000` for the backend API. To change this, modify the fetch URLs in the authentication context and API calls.
+The frontend automatically connects to `https://esl-management-platform.onrender.com` for the backend API. To change this, modify the fetch URLs in the authentication context and API calls.
